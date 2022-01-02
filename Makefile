@@ -1,5 +1,10 @@
-output: main.o
-     g++ main.o -o output 
+ExeName=MedInfo
 
-main.o: main.cpp
-     g++ -c main.cpp
+$(ExeName): main.o
+	g++ main.o -o $(ExeName)
+
+main: main.cpp
+	g++ -c main.cpp 
+
+ clean:
+	-rm *.o $(objects) $(ExeName)
